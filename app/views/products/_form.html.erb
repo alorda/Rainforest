@@ -1,0 +1,23 @@
+<!-- This is a form that only has to be written once! -->
+
+<%= form_for(@product) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price_in_cents %>
+    <%= f.number_field :price_in_cents %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
