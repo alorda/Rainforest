@@ -3,6 +3,6 @@
 
 <p><% @products.each do |product| %></p>
   <ul>
-    <li><%= product.name %> | <%= product.description %> | $<%= product.formatted_price %></li>
+    <li><%= product.id %> | <%= product.name %> | <%= product.description %> | $<%= product.formatted_price %></li>
   </ul>
   <% end %>
