@@ -1,4 +1,5 @@
-
+<%= link_to product_path(product.id) do %>
   <ul>
-    <li><%= product.id %> | <%= product.name %> | <%= product.description %> | $<%= product.formatted_price %></li>
+    <li><%= product.name %> | <%= product.description %> | $<%= product.formatted_price %></li>
   </ul>
+<% end %>
