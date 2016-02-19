@@ -1,5 +1,24 @@
 <h3>Reviews</h3>
 
-<p>Reviews for <b><%= @product.name %></b></p>
+<p>Reviews for who is writing to this page? It's products#show<b><%= @product.name %></b></p>
 
-<%= render 'reviews/review' %>
+<p style="color: red;">But what I don't understand is the text below doesn't match what is written in reviews/review partial...<br>
+Where is the "Here is a review for" text coming from?<br>
+I just realized that "Here is a review for 99" was the review that I left. I clicked 'Create Review' several times. Duh.</p>
+
+<div id="review-list">
+  <%= render :partial => "reviews/review" %>
+</div>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    $("#new_review")
+      .on('ajax:beforeSend', function() {alert('loading!');})
+      .on('ajax:success', function(data, status, xhr) {alert("Success!");})
+      .on('ajax:error', function(xhr, status, error) {alert("error!");})
+      .on('ajax.complete', function() {alert("complete!");});
+  })
+  
+</script>
