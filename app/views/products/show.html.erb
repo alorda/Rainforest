@@ -6,12 +6,16 @@
 Where is the "Here is a review for" text coming from?<br>
 I just realized that "Here is a review for 99" was the review that I left. I clicked 'Create Review' several times. Duh.</p>
 
+<div id="products">
+  <%= render @product %>
+</div>
+
 <div id="review-list">
   <%= render :partial => "reviews/review" %>
 </div>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
   $(document).ready(function() {
     $("#new_review")
@@ -20,5 +24,5 @@ I just realized that "Here is a review for 99" was the review that I left. I cli
       .on('ajax:error', function(xhr, status, error) {alert("error!");})
       .on('ajax.complete', function() {alert("complete!");});
   })
-  
-</script>
+
+</script> -->
