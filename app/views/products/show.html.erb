@@ -1,28 +1,27 @@
 <h3>Reviews</h3>
 
-<p>Reviews for who is writing to this page? It's products#show<b><%= @product.name %></b></p>
-
-<p style="color: red;">But what I don't understand is the text below doesn't match what is written in reviews/review partial...<br>
-Where is the "Here is a review for" text coming from?<br>
-I just realized that "Here is a review for 99" was the review that I left. I clicked 'Create Review' several times. Duh.</p>
+<p>Reviews for <b><%= @product.name %></b></p>
 
 <div id="products">
   <%= render @product %>
 </div>
 
 <div id="review-list">
-  <%= render :partial => "reviews/review" %>
+  <%= render :partial => "reviews" %>
 </div>
 
-
-<!-- <script type="text/javascript">
-
-  $(document).ready(function() {
-    $("#new_review")
-      .on('ajax:beforeSend', function() {alert('loading!');})
-      .on('ajax:success', function(data, status, xhr) {alert("Success!");})
-      .on('ajax:error', function(xhr, status, error) {alert("error!");})
-      .on('ajax.complete', function() {alert("complete!");});
-  })
-
-</script> -->
+<script type="text/javascript">
+  $(function() {
+     $("#new_review")
+        .on('ajax:beforeSend', function() { // set this code to happen just before the ajax request is made
+          $("input[type='submit']") // make changes to the submit button
+            .val('Saving...') // change the text on the button
+            .attr('disabled', 'disabled'); // disable the button
+        })
+        .on('ajax:complete', function() {
+          $("input[type='submit']")
+            .val('Create Review')
+            .removeAttr('disabled');
+        });
+  });
+</script>
